@@ -210,5 +210,7 @@ app.post('/api/confirm', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const BASE_URL = process.env.BASE_URL || 
+                 (process.env.HEROKU_APP_NAME ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com` : 
+                 `http://localhost:${PORT}`);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
