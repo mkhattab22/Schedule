@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyBtn = document.getElementById('copyBtn');
     const statusContainer = document.getElementById('statusContainer');
     const historyContainer = document.getElementById('historyContainer');
-    const BASE_URL = 'http://localhost:5000';
+    const BASE_URL = 'https://schedul-1754fee4a143.herokuapp.com';
 
     let currentScheduleId = null;
     let refreshInterval = null;
