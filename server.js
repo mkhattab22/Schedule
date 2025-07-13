@@ -213,4 +213,12 @@ const PORT = process.env.PORT || 5000;
 const BASE_URL = process.env.BASE_URL || 
                  (process.env.HEROKU_APP_NAME ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com` : 
                  `http://localhost:${PORT}`);
+// Serve admin interface
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, '../work-schedule-confirm/admin.html'));
+});
+
+// Serve static files from confirm directory
+app.use(express.static(path.join(__dirname, '../work-schedule-confirm')));
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

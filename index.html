@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Your Shift</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .confirmation-box {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #employeeInfo {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            display: none;
+        }
+        .error {
+            color: #f44336;
+            margin: 10px 0;
+        }
+        .employee-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f5f5f5;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .employee-item:hover {
+            background: #e0e0e0;
+        }
+        #employeeList {
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shift Confirmation</h1>
+    <div style="text-align: right; margin-bottom: 20px;">
+        <a href="admin.html" style="color: #4CAF50; text-decoration: none;">Admin Panel</a>
+    </div>
+    
+    <div id="nameListSection">
+        <h2>Scheduled Employees</h2>
+        <input type="text" id="searchInput" placeholder="Search by name..." style="width: 100%; padding: 10px; margin-bottom: 10px;">
+        <div id="employeeList"></div>
+        <div id="errorMsg" class="error"></div>
+    </div>
+
+    <div id="idVerificationSection" class="confirmation-box" style="display: none;">
+        <h2>Verify Your ID</h2>
+        <input type="text" id="employeeId" placeholder="Your Employee ID">
+        <button id="verifyBtn">Verify</button>
+        <div id="verifyErrorMsg" class="error"></div>
+    </div>
+
+    <div id="confirmationSection" class="confirmation-box" style="display: none;">
+        <div id="employeeInfo"></div>
+        <textarea id="confirmationNote" placeholder="Optional note (e.g. running late)"></textarea>
+        <button id="confirmBtn">Confirm Attendance</button>
+        <div id="successMsg" style="color: #4CAF50; margin-top: 10px;"></div>
+    </div>
+
+    <script src="employee-script.js"></script>
+</body>
+</html>
