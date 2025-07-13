@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmBtn = document.getElementById('confirmBtn');
     const confirmationNote = document.getElementById('confirmationNote');
     const successMsg = document.getElementById('successMsg');
-    const BASE_URL = process.env.BASE_URL || 'http://localhost:5000';
+    const BASE_URL = 'https://schedul-1754fee4a143.herokuapp.com';
 
     const urlParams = new URLSearchParams(window.location.search);
     const scheduleDate = urlParams.get('schedule');
