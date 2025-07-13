@@ -215,10 +215,10 @@ const BASE_URL = process.env.BASE_URL ||
                  `http://localhost:${PORT}`);
 // Serve admin interface
 app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../work-schedule-confirm/admin.html'));
+  res.sendFile(path.join(__dirname, '../../work-schedule-confirm/admin.html'));
 });
 
 // Serve static files from confirm directory
-app.use(express.static(path.join(__dirname, '../work-schedule-confirm')));
+app.use(express.static(path.join(__dirname, '../../work-schedule-confirm')));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
